@@ -1,3 +1,8 @@
+.card-and-button {
+    width: 800px;
+    position: relative;
+    left: calc(50% - 800px / 2);
+}
 .card {
     height: 400px;
     display: flex;
@@ -26,4 +31,8 @@ textarea {
 }
 img {
     width: 180px;
+}
+.button {
+    left: 583px;
+    position: relative;
 }

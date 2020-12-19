@@ -8,7 +8,27 @@
                 mode: 'edit'
             }
         }).done(function(data) {
-            $('.body').append(data);
+            $('.body').append(data)
+        });
+
+        $('.body').on('click', '.save', () => {
+            const name = $('.edit-name-value').val();
+            const url = $('.edit-url-value').val();
+            const description = $('.edit-description-value').val();
+            const price = $('.edit-price-value').val();
+
+            $.ajax({
+                url: 'methods/addProduct.php',
+                data: {
+                    name,
+                    description,
+                    price,
+                    url,
+                },
+                method: 'POST',
+            }).done(function(data) {
+                console.log(data)
+            });
         });
     });
 </script>
