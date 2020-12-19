@@ -5,8 +5,9 @@
         $.ajax({
             url: 'components/card.php',
             data: {
-                mode: 'edit'
-            }
+                mode: 'add'
+            },
+            method: 'POST',
         }).done(function(data) {
             $('.body').append(data)
         });

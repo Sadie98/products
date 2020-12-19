@@ -15,6 +15,9 @@ switch ($_GET['page']) {
     case "one":
         include("pages/one.php");
         break;
+    case "edit":
+        include("pages/edit .php");
+        break;
     default:
         include("pages/home.php");
         break;
