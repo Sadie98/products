@@ -49,6 +49,10 @@ class DB
         return self::instance()->query($sql)->fetch();
     }
 
+    public static function fetchAll($sql)
+    {
+        return self::instance()->query($sql)->fetchAll();
+    }
 
     public static function id() {
         return self::instance()->lastInsertId();
