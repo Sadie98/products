@@ -18,3 +18,21 @@ body {
 .common-container .body {
     height: calc(100% - 60px);
 }
+
+.button {
+    width: 200px;
+    height: 60px;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+
+}
+.button-blue {
+    background-color: #B3DEE2;
+}
+.button-pink {
+    background-color: #EFCFE3;
+}
+.right-button {
+    margin-left: 10px;
+}

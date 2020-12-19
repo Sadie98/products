@@ -5,9 +5,12 @@ session_start();
 require_once("config/core.php");
 include("commonTemplate.php");
 
-switch ($_GET['option']) {
-    case "page":
-        include("pages/page.php");
+switch ($_GET['page']) {
+    case "all":
+        include("pages/all.php");
+        break;
+    case "add":
+        include("pages/add.php");
         break;
     default:
         include("pages/home.php");

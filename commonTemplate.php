@@ -4,5 +4,7 @@
     <div class="header">
         Система просмотра списка товаров
     </div>
-    <div class="body"></div>
+    <div class="body">
+        <?php echo $body; ?>
+    </div>
 </div>
