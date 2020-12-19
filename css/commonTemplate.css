@@ -15,3 +15,6 @@ body {
     line-height: 60px;
     padding-left: 20px
 }
+.common-container .body {
+    height: calc(100% - 60px);
+}

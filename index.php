@@ -3,6 +3,7 @@
 session_start();
 
 require_once("config/core.php");
+include("commonTemplate.php");
 
 switch ($_GET['option']) {
     case "page":
@@ -13,4 +14,3 @@ switch ($_GET['option']) {
         break;
 }
 
-include("commonTemplate.php");
