@@ -1,8 +1,8 @@
 <?php
     $mode = $_GET['mode'];
     $nameValue = $_GET['name_value'] ?? '';
-//    $urlValue = ($_GET['mode'] == 'edit') ? '' : $_GET['url_value'];
-    $urlValue = 'https://images.wbstatic.net/big/new/6210000/6212924-1.jpg';
+    $urlValue = ($_GET['mode'] == 'edit') ? '' : $_GET['url_value'];
+//    $urlValue = 'https://images.wbstatic.net/big/new/6210000/6212924-1.jpg';
     $descriptionValue = $_GET['description_value'] ?? '';
     $priceValue = $_GET['price_value'] ?? '';
 ?>

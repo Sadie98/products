@@ -26,8 +26,11 @@
                     url,
                 },
                 method: 'POST',
-            }).done(function(data) {
-                console.log(data)
+            }).done(function(id) {
+                if (id !== '-1') {
+                    const url = document.location.href.split('?')[0] + "?page=one&id=" + id;
+                    document.location = url;
+                }
             });
         });
     });

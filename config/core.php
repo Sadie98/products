@@ -33,7 +33,7 @@ class DB
         return call_user_func_array(array(self::instance(), $method), $args);
     }
 
-    public static function run($sql, $args = [])
+    public static function exec($sql, $args = [])
     {
         if (!$args)
         {
@@ -42,5 +42,15 @@ class DB
         $stmt = self::instance()->prepare($sql);
         $stmt->execute($args);
         return $stmt;
+    }
+
+    public static function fetch($sql)
+    {
+        return self::instance()->query($sql)->fetch();
+    }
+
+
+    public static function id() {
+        return self::instance()->lastInsertId();
     }
 }
