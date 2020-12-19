@@ -13,4 +13,4 @@ switch ($_GET['option']) {
         break;
 }
 
-include ("template.php");
+include("commonTemplate.php");
