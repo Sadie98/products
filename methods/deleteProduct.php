@@ -1,7 +1,10 @@
 <?php
 include('./../config/mysql.php');
+include('./../config/redis.php');
 
-$id = $_POST['id'];
-echo $id;
+$id = (int)$_POST['id'];
+
+R::set('products', '');
+
 $res = DB::exec("DELETE FROM `products` WHERE id = {$id}");
 echo $res ? DB::id() : -1;
