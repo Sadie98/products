@@ -38,7 +38,7 @@
                 '<option value="3">цена по возрастанию</option>' +
                 '<option value="4">цена по убыванию</option>' +
                 '</select>' +
-                '<p>Страница</p>' +
+                '<p class="page-select">Страница</p>' +
                 '<select class="page">';
             let page = 1;
 
