@@ -3,6 +3,7 @@
 session_start();
 
 require_once("config/mysql.php");
+require_once("config/redis.php");
 include("commonTemplate.php");
 
 switch ($_GET['page']) {

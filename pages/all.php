@@ -2,11 +2,10 @@
 <link rel='stylesheet' href='css/all.css'/>
 <script type="application/javascript">
     $(function () {
-        let sorting = '0';
+        let sorting = '1';
         getAllProducts(sorting, insertValues);
 
         function getAllProducts(sorting, successCallback) {
-            console.log(sorting)
             $.ajax({
                 url: 'methods/getAllProducts.php',
                 method: 'POST',

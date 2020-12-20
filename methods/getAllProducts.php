@@ -1,5 +1,6 @@
 <?php
 include('./../config/mysql.php');
+include('./../config/redis.php');
 
 $sorting = $_POST['sorting'];
 $order = "";
@@ -17,6 +18,12 @@ switch($sorting){
         $order = 'ORDER BY `price` DESC';
         break;
 }
+$sorting = R::get('sorting');
+$res = json_decode(R::get('products'));
+if (!$res || $order != $sorting) {
+    $res = DB::fetchAll("SELECT * FROM `products` {$order} LIMIT 1000");
+    R::set('products', json_encode($res));
+    R::set('sorting', $order);
+}
 
-$res = DB::fetchAll("SELECT * FROM `products` {$order} LIMIT 1000");
 echo json_encode($res);

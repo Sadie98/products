@@ -1,6 +1,7 @@
 <?php
 
 $products = $_POST['products'];
+
 foreach ($products as $product) {
     $id = $product['id'] ?? '';
     $mode = 'view';
