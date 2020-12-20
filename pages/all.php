@@ -8,11 +8,11 @@
         }).done( (data) => {
             if (data) {
                 const dataValues = JSON.parse(data);
-                console.log(dataValues)
                 dataValues.map((dataValue) => {
                     $.ajax({
                         url: 'components/card.php',
                         data: {
+                            id: dataValue['id'],
                             mode: 'view',
                             name_value: dataValue['name'],
                             url_value: dataValue['url_picture'],
@@ -27,12 +27,12 @@
             }
         });
 
-    // $('.body').on('click', '.edit', () => {
-    //     const id = urlParams.get('id');
-    //
-    //     const url = document.location.href.split('?')[0] + "?page=edit&id=" + id;
-    //     document.location = url;
-    // });
+    $('.body').on('click', '.edit', (event) => {
+        const id = $(event.target).data()['id'];
+
+        const url = document.location.href.split('?')[0] + "?page=edit&id=" + id;
+        document.location = url;
+    });
     })
     ;
 </script>

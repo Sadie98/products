@@ -5,7 +5,7 @@ body {
     margin: 0
 }
 .common-container {
-    height: 100%;
+    height: auto;
     background-color: #EAF2D7;
 }
 .common-container .header {
@@ -16,7 +16,7 @@ body {
     padding-left: 20px
 }
 .common-container .body {
-    height: calc(100% - 60px);
+    height: auto;
 }
 
 .button {

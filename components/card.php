@@ -1,15 +1,15 @@
 <?php
+    $id = $_POST['id'] ?? '';
     $mode = $_POST['mode'];
     $nameValue = $_POST['name_value'] ?? '';
     $urlValue = $_POST['url_value'] ?? '';
-//    $urlValue = 'https://images.wbstatic.net/big/new/6210000/6212924-1.jpg';
     $descriptionValue = $_POST['description_value'] ?? '';
     $priceValue = $_POST['price_value'] ?? '';
 ?>
 <div class="card-and-button">
     <div class="card">
         <div class="image">
-            <img src="<?php echo $urlValue ?>">
+            <img src="<?php echo $urlValue ?>" onerror="this.src='https://image.flaticon.com/icons/png/512/37/37543.png'">
         </div>
         <div class="info">
             <div class="name">
@@ -48,7 +48,7 @@
     </div>
     <? if ($mode == 'edit' || $mode == 'add') echo '
         <button class="button button-blue save">Сохранить</button>
-    '; else if ($mode == 'view') echo '
-        <button class="button button-pink edit">Изменить</button>
-    '?>
+    '; else if ($mode == 'view') echo "
+        <button class=\"button button-pink edit\" data-id=\"{$id}\">Изменить</button>
+    "?>
 </div>

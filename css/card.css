@@ -36,3 +36,8 @@ img {
     left: 583px;
     position: relative;
 }
+.name-price, .url-value, .description-value, .name-value {
+    width: 400px;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
