@@ -1,0 +1,15 @@
+.sorting-panel {
+    height: 60px;
+    margin: 10 360px 0 360px;
+    display: flex;
+    align-items: center;
+}
+
+.sorting-panel select {
+    height: 30px;
+}
+
+.sorting-panel p {
+    padding-top: 11px;
+    margin-right: 10px;
+}

@@ -1,4 +1,5 @@
 <link rel='stylesheet' href='css/card.css'/>
+<link rel='stylesheet' href='css/all.css'/>
 <script type="application/javascript">
     $(function () {
         let sorting = '0';
@@ -17,7 +18,7 @@
 
         async function insertValues(data) {
             $('.body').empty();
-            const sortingPanel = '<div class="sorting-panel">' +
+            const sortingPanel = '<div class="sorting-panel"> <p>Сортировка: </p>' +
                 '<select>' +
                 '<option value="1">id по возрастанию</option>' +
                 '<option value="2">id по убыванию</option>' +
