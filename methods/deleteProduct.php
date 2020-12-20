@@ -4,7 +4,7 @@ include('./../config/redis.php');
 
 $id = (int)$_POST['id'];
 
-R::set('products', '');
+R::flushAll();
 
 $res = DB::exec("DELETE FROM `products` WHERE id = {$id}");
 echo $res ? DB::id() : -1;

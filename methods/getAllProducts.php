@@ -2,28 +2,29 @@
 include('./../config/mysql.php');
 include('./../config/redis.php');
 
-$sorting = $_POST['sorting'];
+$sorting = (int)$_POST['sorting'];
+$offset = (int)$_POST['offset'];
+
 $order = "";
 switch($sorting){
-    case '1':
+    case 1:
         $order = 'ORDER BY `id` ASC';
         break;
-    case '2':
+    case 2:
         $order = 'ORDER BY `id` DESC';
         break;
-    case '3':
+    case 3:
         $order = 'ORDER BY `price` ASC';
         break;
-    case '4':
+    case 4:
         $order = 'ORDER BY `price` DESC';
         break;
 }
-$sorting = R::get('sorting');
-$res = json_decode(R::get('products'));
-if (!$res || $order != $sorting) {
-    $res = DB::fetchAll("SELECT * FROM `products` {$order} LIMIT 1000");
-    R::set('products', json_encode($res));
-    R::set('sorting', $order);
+$res = json_decode(R::get('products-'.$order.'-'.$offset));
+$res = [];
+if (!$res) {
+    $res = DB::fetchAll("SELECT * FROM `products` {$order} LIMIT 10 OFFSET {$offset}");
+    R::set('products-'.$order.'-'.$offset, json_encode($res));
 }
 
 echo json_encode($res);

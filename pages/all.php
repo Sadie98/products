@@ -3,30 +3,54 @@
 <script type="application/javascript">
     $(function () {
         let sorting = '1';
-        getAllProducts(sorting, insertValues);
+        let offset = 0;
+        let currentPage = 1;
 
-        function getAllProducts(sorting, successCallback) {
+        getAllProducts(offset, sorting, getPagesCount);
+
+        function getAllProducts(offset, sorting, successCallback) {
+            console.log(offset);
             $.ajax({
                 url: 'methods/getAllProducts.php',
                 method: 'POST',
-                data: {sorting}
+                data: {sorting, offset}
             }).done((data) => {
-                successCallback(data);
+                successCallback(data, insertValues);
             });
         }
 
-        async function insertValues(data) {
+        function getPagesCount(productsData, successCallback){
+            $.ajax({
+                url: 'methods/getCountProducts.php',
+                method: 'POST',
+            }).done((data) => {
+                console.log(JSON.parse(data))
+                successCallback(productsData, JSON.parse(data)['count']);
+            });
+        }
+
+        async function insertValues(data, countPages) {
             $('.body').empty();
-            const sortingPanel = '<div class="sorting-panel"> <p>Сортировка: </p>' +
-                '<select>' +
+            let sortingPanel = '<div class="sorting-panel"> <p>Сортировка: </p>' +
+                '<select class="sort">' +
                 '<option value="1">id по возрастанию</option>' +
                 '<option value="2">id по убыванию</option>' +
                 '<option value="3">цена по возрастанию</option>' +
                 '<option value="4">цена по убыванию</option>' +
                 '</select>' +
-                '</div>';
+                '<p>Страница</p>' +
+                '<select class="page">';
+            let page = 1;
+
+            for (let i = 1; i <= countPages; i += 10){
+                sortingPanel += '<option value="' + page + '">' + page + '</option>'
+                page += 1;
+            }
+            sortingPanel += '</select></div>';
             $('.body').append(sortingPanel);
-            $("select").val(sorting);
+
+            $("select.sort").val(sorting);
+            $("select.page").val(currentPage);
 
             const dataValues = JSON.parse(data);
             $.ajax({
@@ -45,9 +69,18 @@
             document.location = url;
         });
 
-        $('.body').on('change', 'select', (event) => {
+        $('.body').on('change', 'select.sort', (event) => {
             sorting = $('select').val();
-            getAllProducts(sorting, insertValues);
+            offset = 0
+            currentPage = 1
+            getAllProducts(offset, sorting, getPagesCount);
+        });
+
+        $('.body').on('change', 'select.page', (event) => {
+            let page = $('select.page').val();
+            offset = (page - 1) * 10;
+            currentPage = page;
+            getAllProducts(offset, sorting, getPagesCount);
         });
     })
     ;

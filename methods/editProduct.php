@@ -8,7 +8,7 @@ $description = addslashes($_POST['description']);
 $price = (int)$_POST['price'];
 $url = addslashes($_POST['url']);
 
-R::set('products', '');
+R::flushAll();
 
 $res = DB::exec("UPDATE `products` SET name = '{$name}', description = '{$description}', price = '{$price}', url_picture = '{$url}' WHERE id = {$id}");
 echo $res ? DB::id() : -1;

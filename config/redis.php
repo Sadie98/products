@@ -29,4 +29,8 @@ class R
     public static function set($name, $value) {
         return self::instance()->set($name, $value);
     }
+
+    public static function flushAll() {
+        return self::instance()->flushAll();
+    }
 }
