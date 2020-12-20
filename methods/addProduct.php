@@ -1,5 +1,5 @@
 <?php
-include('./../config/core.php');
+include('./../config/mysql.php');
 
 $name = $_POST['name'];
 $description = $_POST['description'];

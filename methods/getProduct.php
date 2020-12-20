@@ -1,5 +1,5 @@
 <?php
-include('./../config/core.php');
+include('./../config/mysql.php');
 
 $id = $_POST['id'];
 

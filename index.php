@@ -2,7 +2,7 @@
 
 session_start();
 
-require_once("config/core.php");
+require_once("config/mysql.php");
 include("commonTemplate.php");
 
 switch ($_GET['page']) {
@@ -16,7 +16,7 @@ switch ($_GET['page']) {
         include("pages/one.php");
         break;
     case "edit":
-        include("pages/edit .php");
+        include("pages/edit.php");
         break;
     default:
         include("pages/home.php");

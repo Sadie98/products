@@ -1,4 +1,3 @@
-<link rel='stylesheet' href='css/add.css' />
 <link rel='stylesheet' href='css/card.css' />
 <script type="application/javascript">
     $(function(){
