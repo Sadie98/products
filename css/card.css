@@ -2,9 +2,13 @@
     width: 800px;
     position: relative;
     left: calc(50% - 800px / 2);
+    border-radius: 3px;
+    padding: 10px;
+    margin: 20px 0;
+    background-color: #EAF2D7;
 }
 .card {
-    height: 400px;
+    height: 325px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -18,21 +22,21 @@
     justify-content: space-between;
     align-items: center;
 }
-input {
+.card input {
     width: 400px;
     height: 30px;
 }
-textarea {
+.card textarea {
     width: 400px;
     height: 100px;
     overflow: scroll;
     resize: none;
 
 }
-img {
+.card img {
     width: 180px;
 }
-.button {
+.card .button {
     left: 583px;
     position: relative;
 }

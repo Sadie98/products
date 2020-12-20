@@ -6,17 +6,20 @@ body {
 }
 .common-container {
     height: auto;
-    background-color: #EAF2D7;
 }
 .common-container .header {
     height: 60px;
     background-color: #E27396;
     font-size: 25px;
-    line-height: 60px;
-    padding-left: 20px
+    padding: 0 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
+
 .common-container .body {
     height: auto;
+    min-height: 100%;
 }
 
 .button {
@@ -35,4 +38,7 @@ body {
 }
 .right-button {
     margin-left: 10px;
+}
+.button.button-thin {
+    height: 45px;
 }
