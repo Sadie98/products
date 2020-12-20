@@ -1,5 +1,6 @@
 * {
     font-family: Roboto, serif;
+    color: #545658
 }
 body {
     margin: 0
@@ -15,6 +16,11 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    box-shadow: 0 0 5px rgba(0,0,0,0.5);
+}
+
+.header p {
+    color: white;
 }
 
 .common-container .body {
@@ -28,7 +34,7 @@ body {
     border: none;
     border-radius: 3px;
     cursor: pointer;
-
+    font-size: 14px
 }
 .button-blue {
     background-color: #B3DEE2;

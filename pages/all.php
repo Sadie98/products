@@ -5,7 +5,7 @@
         $.ajax({
             url: 'methods/getAllProducts.php',
             method: 'POST',
-        }).done( (data) => {
+        }).done((data) => {
             if (data) {
                 const dataValues = JSON.parse(data);
                 dataValues.map((dataValue) => {
@@ -27,12 +27,12 @@
             }
         });
 
-    $('.body').on('click', '.edit', (event) => {
-        const id = $(event.target).data()['id'];
+        $('.body').on('click', '.edit', (event) => {
+            const id = $(event.target).data()['id'];
 
-        const url = document.location.href.split('?')[0] + "?page=edit&id=" + id;
-        document.location = url;
-    });
+            const url = document.location.href.split('?')[0] + "?page=edit&id=" + id;
+            document.location = url;
+        });
     })
     ;
 </script>

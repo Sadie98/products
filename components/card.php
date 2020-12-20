@@ -8,6 +8,11 @@
 ?>
 <div class="card-and-button">
     <div class="card">
+        <?
+            if ($mode == 'edit' || $mode == 'view') {
+                echo "<i class=\"glyphicon glyphicon-trash delete\" data-id=\"{$id}\"></i>";
+            }
+        ?>
         <div class="image">
             <img src="<?php echo $urlValue ?>" onerror="this.src='https://image.flaticon.com/icons/png/512/37/37543.png'">
         </div>
@@ -52,3 +57,19 @@
         <button class=\"button button-pink edit\" data-id=\"{$id}\">Изменить</button>
     "?>
 </div>
+<script type="application/javascript">
+    $(function () {
+
+        $('.delete').click((event) => {
+            const id = $(event.target).data()['id'];
+            console.log(id)
+            $.ajax({
+                url: 'methods/deleteProduct.php',
+                data: { id },
+                method: 'POST'
+            }).done(() => {
+                location.reload();
+            });
+        });
+    });
+</script>

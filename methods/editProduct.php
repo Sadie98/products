@@ -9,4 +9,3 @@ $url = $_POST['url'];
 
 $res = DB::exec("UPDATE `products` SET name = '{$name}', description = '{$description}', price = '{$price}', url_picture = '{$url}' WHERE id = {$id}");
 echo $res ? DB::id() : -1;
-//echo "UPDATE `products` SET name = '{$name}', description = '{$description}', price = '{$price}', url_picture = '{$url}') WHERE id = {$id}";

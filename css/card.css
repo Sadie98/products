@@ -6,6 +6,7 @@
     padding: 10px;
     margin: 20px 0;
     background-color: #EAF2D7;
+    box-shadow: 0 0 5px rgba(0,0,0,0.5);
 }
 .card {
     height: 325px;
@@ -44,4 +45,14 @@
     width: 400px;
     text-overflow: ellipsis;
     overflow: hidden;
+}
+.card i.delete{
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    font-size: 22px;
+    cursor: pointer;
+}
+.card i.delete:hover {
+    color: black;
 }
