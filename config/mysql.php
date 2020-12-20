@@ -1,9 +1,9 @@
 <?php
 
-define('DB_HOST', '78.108.80.33');
-define('DB_NAME', "b228065_products");
-define('DB_USER', 'u228065_sadie');
-define('DB_PASS', 'avdeeva98');
+define('DB_HOST', '');
+define('DB_NAME', "");
+define('DB_USER', '');
+define('DB_PASS', '');
 define('DB_CHAR', 'utf8');
 
 class DB
