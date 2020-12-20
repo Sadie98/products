@@ -9,7 +9,6 @@
         getAllProducts(offset, sorting, getPagesCount);
 
         function getAllProducts(offset, sorting, successCallback) {
-            console.log(offset);
             $.ajax({
                 url: 'methods/getAllProducts.php',
                 method: 'POST',
@@ -24,7 +23,6 @@
                 url: 'methods/getCountProducts.php',
                 method: 'POST',
             }).done((data) => {
-                console.log(JSON.parse(data))
                 successCallback(productsData, JSON.parse(data)['count']);
             });
         }

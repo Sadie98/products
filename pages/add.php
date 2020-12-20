@@ -8,7 +8,6 @@
             },
             method: 'POST',
         }).done(function(data) {
-            console.log('hi')
             $('.body').append(data)
         });
 
