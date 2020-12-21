@@ -11,7 +11,7 @@
 
 ## Table structure for table `products`
 
-
+```sql
 CREATE TABLE `products` (
   `id` int(11) NOT NULL,
   `name` varchar(1024) NOT NULL,
@@ -19,18 +19,19 @@ CREATE TABLE `products` (
   `price` int(11) NOT NULL,
   `url_picture` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=cp1251;
+```
 
 ## Indexes for table `products`
-
+```sql
 ALTER TABLE `products`
   ADD PRIMARY KEY (`id`);
-
+```
 ## AUTO_INCREMENT for table `products`
-
+```sql
 ALTER TABLE `products`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
 COMMIT;
-
+```
 # Config
 Данные MariaDB и базы данных прописать в config/mysql.php:
 ```php
